@@ -125,7 +125,16 @@ tentech-edu-backend/
 ├── pom.xml
 └── README.md
 ```
-для каждой задачи создаем свою ветку!!!
+# Для каждой задачи создаем свою ветку  начиная с feature/*!!!
+# Workflow команды
+1. Взяли задачу в Jira
+2. Создали branch
+3. Написали код
+4. Commit
+5. Push
+6. Pull Request
+7. Cross-Review
+8. Merge
 ---
 
 # 5. Назначение директорий
