@@ -1,11 +1,11 @@
-package request;
+package ru.tentech.userservice.request;
 
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-    public class CreateStudentRequest{
+    public class CreateAdminRequest{
             @NotBlank(message = "Имя не может быть пустым")
             String fullName;
 
@@ -17,8 +17,6 @@ import jakarta.validation.constraints.Size;
             @Size(min = 8, message = "Пароль должен быть не менее 8 символов")
             String password;
 
-            @NotBlank(message = "Имя группы обязательно для студента")
-            String groupName;
 
 
 }

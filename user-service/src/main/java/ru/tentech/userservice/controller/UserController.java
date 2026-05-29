@@ -1,52 +1,60 @@
 package ru.tentech.userservice.controller;
 
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import request.CreateAdminRequest;
-import request.CreateStudentRequest;
-import request.UpdateUserRequest;
+import ru.tentech.userservice.request.CreateAdminRequest;
+import ru.tentech.userservice.request.CreateStudentRequest;
+import ru.tentech.userservice.request.UpdateUserRequest;
 
-import response.UserResponse;
-import response.UserShortResponse;
-
+import ru.tentech.userservice.response.UserResponse;
+import ru.tentech.userservice.response.UserShortResponse;
+import ru.tentech.userservice.service.UserService;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")
+@RequiredArgsConstructor
 public class UserController {
+    private final UserService userService;
 
     @PostMapping("/students")
     @ResponseStatus(HttpStatus.CREATED)
     public UserResponse createStudent(
-            @RequestBody CreateStudentRequest request
-    ) {
-
-        return new UserResponse();
+            @Valid @RequestBody CreateStudentRequest request
+    ){
+        return userService.createStudent(request);
     }
+
+
 
     @PostMapping("/admins")
     @ResponseStatus(HttpStatus.CREATED)
     public UserResponse createAdmin(
-            @RequestBody CreateAdminRequest request
+            @Valid @RequestBody CreateAdminRequest request
     ) {
-
-        return new UserResponse();
+        return userService.createAdmin(request);
     }
+
+
+
 
     @PutMapping("/{id}")
     public UserResponse updateUser(
             @PathVariable Long id,
-            @RequestBody UpdateUserRequest request
+            @Valid@RequestBody UpdateUserRequest request
     ) {
 
-        return new UserResponse();
+        return userService.updateUser(id,request);
+
     }
 
     @GetMapping
     public List<UserShortResponse> getAllUsers() {
 
-        return List.of();
+        return userService.getAllUsers();
     }
 
     @GetMapping("/{id}")
@@ -54,7 +62,7 @@ public class UserController {
             @PathVariable Long id
     ) {
 
-        return new UserResponse();
+        return userService.getUserById(id);
     }
 
     @PatchMapping("/{id}/status")
@@ -63,6 +71,6 @@ public class UserController {
             @RequestParam String status
     ) {
 
-        return "Status updated";
+        return userService.updateUserStatus(id,status);
     }
 }

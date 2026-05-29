@@ -1,4 +1,4 @@
-package response;
+package ru.tentech.userservice.response;
 
 public class UserShortResponse {
     Long id;
