@@ -1,10 +1,16 @@
 package response;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class UserShortResponse {
-    Long id;
-    String fullName;
-    String email;
-    String groupName;
-    String role;
-    String status;
+
+    private Long id;
+    private String fullName;
+    private String email;
+    private String groupName;
+    private String role;
+    private String status;
 }
