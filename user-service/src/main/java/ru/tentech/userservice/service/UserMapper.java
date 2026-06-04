@@ -63,12 +63,7 @@ public class UserMapper {
     }
 
     public List<UserShortResponse> toShortResponseList(List<User> users) {
-        if (users == null) {
-            return List.of();
-        }
+        return null;
 
-        return users.stream()
-                .map(this::toShortResponse)
-                .collect(Collectors.toList());
     }
 }
