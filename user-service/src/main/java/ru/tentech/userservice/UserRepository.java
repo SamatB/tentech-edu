@@ -10,6 +10,10 @@ import java.util.UUID;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, UUID> {
+    static ru.tentech.userservice.User save(ru.tentech.userservice.User student) {
+        return null;
+    }
+
     Optional<User> findByEmail(String email);
 
     boolean existsByEmail(String email);

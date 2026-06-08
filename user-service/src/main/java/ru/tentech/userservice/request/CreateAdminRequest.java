@@ -1,4 +1,4 @@
-package request;
+package ru.tentech.userservice.request;
 
 
 import jakarta.validation.constraints.Email;

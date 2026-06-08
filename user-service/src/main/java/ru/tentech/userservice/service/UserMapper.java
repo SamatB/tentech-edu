@@ -1,13 +1,15 @@
 package ru.tentech.userservice.service;
 
 import org.springframework.stereotype.Component;
-import response.UserResponse;
-import response.UserShortResponse;
+
+
+import ru.tentech.userservice.response.UserResponse;
+import ru.tentech.userservice.response.UserShortResponse;
 import ru.tentech.userservice.User;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
+
 
 @Component
 public class UserMapper {
