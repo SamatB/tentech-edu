@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16
+
+    container_name: tentech-postgres
+
+    environment:
+      POSTGRES_DB: tentech_db
+      POSTGRES_USER: tentech_user
+      POSTGRES_PASSWORD: tentech_password
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
