@@ -1,6 +1,7 @@
 package ru.tentech.userservice;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -44,4 +45,14 @@ public class User {
     public void prePersist() {
         this.registeredAt = LocalDateTime.now();
     }
+
+
+    public void setUsername(String username) {
+
+    }
+
+    public void setName(@NotBlank(message = "Имя не может быть пустое") String name) {
+    }
+
+
 }
